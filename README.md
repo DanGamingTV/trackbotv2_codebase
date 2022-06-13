@@ -19,6 +19,7 @@ Clone the remo.tv controller somewhere on your computer, then open in vscode.
 Install the [ev3dev visual studio code extension](https://marketplace.visualstudio.com/items?itemName=ev3dev.ev3dev-browser)
 
 Download the trackbot.py file into the hardware directory of the controller.
+- For example, if your controller directory was called `remotv`, the path of trackbot.py would be `remotv/hardware/trackbot.py`.
 
 Copy controller.sample.conf to controller.conf, and edit according to instructions [here](https://github.com/remotv/controller#configure-the-controller) - but disable video and audio.
 

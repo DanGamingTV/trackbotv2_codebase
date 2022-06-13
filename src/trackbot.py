@@ -5,13 +5,10 @@ from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
-
 from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D
 from ev3dev2.motor import SpeedDPS, SpeedRPM, SpeedRPS, SpeedDPM
-
 # Initialise the EV3 (Our interfaces for using EV3 motors, sensors, etc)
 ev3 = EV3Brick()
-
 # Set up our motors
 # This assumes a physical configuration like this:
 # Front set (facing forward) [motor_front_left] [motor_front_right]
@@ -53,10 +50,10 @@ def do_robot_drive(front_left, front_right, back_left, back_right): # Each of th
         elif 'block' not in config:
             config['block'] = False
     # Run our motors with the paramaters provided
-    motor_front_left.on_for_degrees(speed=SpeedDPS(front_left['speed']), degrees=front_left['angle'], brake=True, block=False)    # Front Left Motor
-    motor_front_right.on_for_degrees(speed=SpeedDPS(front_right['speed']), degrees=front_right['angle'], brake=True, block=False) # Front Right Motor
-    motor_back_left.on_for_degrees(speed=SpeedDPS(back_left['speed']), degrees=back_left['angle'], brake=True, block=False)       # Back Left Motor
-    motor_back_right.on_for_degrees(speed=SpeedDPS(back_right['speed']), degrees=back_right['angle'], brake=True, block=False)    # Back Right Motor
+    motor_front_left.on_for_degrees(speed=SpeedDPS(front_left['speed']), degrees=front_left['degrees'], brake=True, block=False)    # Front Left Motor
+    motor_front_right.on_for_degrees(speed=SpeedDPS(front_right['speed']), degrees=front_right['degrees'], brake=True, block=False) # Front Right Motor
+    motor_back_left.on_for_degrees(speed=SpeedDPS(back_left['speed']), degrees=back_left['degrees'], brake=True, block=False)       # Back Left Motor
+    motor_back_right.on_for_degrees(speed=SpeedDPS(back_right['speed']), degrees=back_right['degrees'], brake=True, block=False)    # Back Right Motor
 
 def drive_forward_angle(speed, angle):
     do_robot_drive(
